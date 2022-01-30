@@ -43,5 +43,8 @@ export default {
     port:"80"
   },
 
-  target : 'static'
+  target : 'static',
+  router: {
+    base: '/blog/'
+  }
 }
