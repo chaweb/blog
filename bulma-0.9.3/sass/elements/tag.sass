@@ -132,6 +132,32 @@ $tag-colors: $colors !default
       background-color: darken($tag-background-color, 5%)
     &:active
       background-color: darken($tag-background-color, 10%)
+  &.is-add
+    +ltr-property("margin", $tag-delete-margin, false)
+    padding: 0
+    position: relative
+    width: 2em
+    &::before,
+    &::after
+      background-color: currentColor
+      content: ""
+      display: block
+      left: 50%
+      position: absolute
+      top: 50%
+      transform: translateX(-50%) translateY(-50%)
+      transform-origin: center center
+    &::before
+      height: 2px
+      width: 50%
+    &::after
+      height: 50%
+      width: 2px
+    &:hover,
+    &:focus
+      background-color: darken($tag-background-color, 5%)
+    &:active
+      background-color: darken($tag-background-color, 10%)
   &.is-rounded
     border-radius: $radius-rounded
 

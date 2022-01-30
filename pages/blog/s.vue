@@ -7,7 +7,7 @@ div
             span.tag.is-success {{item}}
             nuxt-link.tag.is-delete(:to="`./s?tag=${deleteTag(item)}`")
 
-        .tags.has-addons(v-for="(item, index) in UnselectedCat" :key="`search-${index}`")
+        .tags.has-addons(v-for="(item, index) in UnselectedCat" :key="`Unselect-${index}`")
             span.tag.is-info {{item}}
             nuxt-link.tag.is-add(:to="`./s?tag=${addTag(item)}`" @click="refresh()")
 
@@ -43,6 +43,7 @@ export default {
       
     },
     refresh(){
+      console.log(refresh)
       this.$nuxt.refresh()
     }
 

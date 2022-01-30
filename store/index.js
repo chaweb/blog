@@ -1,5 +1,5 @@
 export const state = () => ({
-    categories: ["math", "web", "python", "programation", "livre"],
+    categories: ["math", "web", "python", "programation", "livre", "design"],
 
     blogs: ([{
         name: "coucou",
