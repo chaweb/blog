@@ -17,6 +17,7 @@ div
                     nuxt-link.navbar-link(to="/blog/s" :class="{'link-exact-active' : isRouteActive('/blog/s')}")
                         |blog
                     .navbar-dropdown.is-boxed
+                        .navbar-item#topTagsTitle Top tags
                         nuxt-link.navbar-item(v-for="(item, index) in catégories" :key="`catégories-${index}`" :to="`/blog/s?tag=${item}`") {{item}}
                     
                     hr.navbar-divider
@@ -30,7 +31,7 @@ div
                         a.button.is-primary
                             strong s'inscrire
 
-    nuxt#pages.box
+    nuxt#pages.box.is-widescreen.container
 
 </template>
 
@@ -48,7 +49,7 @@ export default {
   data () {
     return {
         nav_activ: false,
-        catégories: this.$store.state.categories
+        catégories: this.$store.state.UpCat
     }
   }
   
@@ -60,10 +61,18 @@ export default {
 html
     background-color: #141414
     padding-top: 100px
+    
+
+</style>
+
+<style lang="sass" scoped>
+
 #pages
-    margin:50px
     margin-top:20px
     background-color: lighten(#141414, 5%)
+
+#topTagsTitle
+    background-color: #303030
 </style>
 
 

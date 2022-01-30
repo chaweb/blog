@@ -19,6 +19,7 @@ div
 #tag_menu
     display: flex
     flex-direction: row
+    flex-wrap: wrap
     align-items: flex-start
     & > div
       margin:5px
