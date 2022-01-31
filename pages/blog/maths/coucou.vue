@@ -1,4 +1,4 @@
 <template lang="pug">
-    div
-        div j'aimes les maths !
+div
+    div Oh ! Un easter egg ! Tout ça pour dire : j'aimes les maths !
 </template>

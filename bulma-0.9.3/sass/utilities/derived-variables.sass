@@ -74,13 +74,13 @@ $pre-background: $background !default
 // Link colors
 
 $link: $turquoise !default
-$link-invert: findColorInvert($link) !default
-$link-light: findLightColor($link) !default
-$link-dark: findDarkColor($link) !default
+$link-invert: invert($link) !default
+$link-light: findDarkColor($link) !default
+$link-dark: findLightColor($link) !default
 $link-visited: $purple !default
 
-$link-hover: $grey-darker !default
-$link-hover-border: $grey-light !default
+$link-hover: lighten($link, 45%) !default
+$link-hover-border: lighten($link, 75%)  !default
 
 $link-focus: $grey-darker !default
 $link-focus-border: $blue !default

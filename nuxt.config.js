@@ -3,7 +3,7 @@ export default {
   head: {
     title: 'blog',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'fr'
     },
     meta: [
       { charset: 'utf-8' },
@@ -43,8 +43,8 @@ export default {
     port:"80"
   },
 
-  target : 'static',
-  router: {
-    base: '/blog/'
-  }
+  // target : 'static',
+  // router: {
+  //   base: '/blog/'
+  // }
 }

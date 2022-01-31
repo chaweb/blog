@@ -2,9 +2,9 @@
     .content
         h1 Me contacter
         p mail : 
-            a coucou@mail.com
+            a(href="mailto:pro.m.houdmond@oultook.com") pro.m.houdmond@outlook.com
 
         h2 
-            a CV
+            nuxt-link(to="/cv") CV
         
 </template>
