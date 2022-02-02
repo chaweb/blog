@@ -3,7 +3,8 @@ div
     nav.navbar(role="navigation" aria-label="main navigation" style="z-index: 1").is-spaced.is-fixed-top
         .navbar-brand
             .navbar-item
-                strong chaweb
+                img(src="/favicon.ico")
+                strong Chaweb
             #BurgerMenu.navbar-burger(role='button' @click="nav_activ = !nav_activ" :class="{'is-active': nav_activ}")
                 span
                 span
