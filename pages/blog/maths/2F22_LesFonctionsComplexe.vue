@@ -41,6 +41,13 @@
 
     p pour débuter, on va devoir mettre ce petit bout de code, dès le debut ! 
     pre 
-        code(lang="python")
+        code.py
+            |import cmath as cm #pour les calcules des nombres complexes
+            |import pandas  as pd #pour avoir des tableaux assez grands
+            |import plotly.express as px #pour dessiner de jolie dessin
+            |import plotly as plt #pareil ... mais sans l'express
+            |import plotly.graph_objects as go #pareil... mais bref !
+            |import numpy as np #pour les calculs un peu compliqué
+            |import math #pareille parce que les maths... ! 
             
 </template>
