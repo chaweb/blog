@@ -1,7 +1,7 @@
 @import "../utilities/mixins"
 
 $table-color: $text-strong !default
-$table-background-color: $scheme-main !default
+$table-background-color: transparent !default
 
 $table-cell-border: 1px solid $border !default
 $table-cell-border-width: 0 0 1px !default
@@ -78,6 +78,11 @@ $table-colors: $colors !default
     th
       border-width: $table-head-cell-border-width
       color: $table-head-cell-color
+    &:first-child
+        &> tr
+          &> td,
+          &> th
+            white-space: nowrap
   tfoot
     background-color: $table-foot-background-color
     td,
@@ -91,6 +96,7 @@ $table-colors: $colors !default
         td,
         th
           border-bottom-width: 0
+      
   // Modifiers
   &.is-bordered
     td,

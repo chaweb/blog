@@ -126,4 +126,41 @@
 
     p Sinon, je peux vous laisser avec quelque fonction choisis que j'ai trouver assez stylé :
     
+    section.section.is-large
+        .container
+            .carousel#carousel(data-slides-to-scroll="1")
+                .slider-container
+                    .slider-item
+                        .card
+                            .card-image
+                                figure.image
+                                    embed(width="1280" height="960" src="/math/fonction_carré.html")
+                    .slider-item 
+                        .card
+                            embed(src="/math/fonction_carré.html")
+                    .slider-item 
+                        .card
+                            embed(src="/math/fonction_carré.html")
+                    .slider-item 
+                        .card
+                            embed(src="/math/fonction_carré.html")
+                    .slider-item 
+                        .card
+                            embed(src="/math/fonction_carré.html")
+                    .slider-item 
+                        .card
+                            embed(src="/math/fonction_carré.html")
 </template>
+
+
+<script>
+export default {
+    mounted() {
+        bulmaCarousel.attach('#carousel', {
+                slidesToScroll: 1,
+                slidesToShow: 1,
+                loop:true
+            }); 
+    },
+}
+</script>
