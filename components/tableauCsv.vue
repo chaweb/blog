@@ -40,10 +40,12 @@
 
 <script>
 export default {
-    mounted () {
-        d3.csv(this.lien,function (data) {
-                tabulate(data, Object.keys(data[0])) 
-        })  
+    mounted() {
+        try{
+            d3.csv(this.lien,function (data) {
+                    tabulate(data, Object.keys(data[0])) 
+            })
+        }catch{location.reload();}
     },
     props:['lien']
 }

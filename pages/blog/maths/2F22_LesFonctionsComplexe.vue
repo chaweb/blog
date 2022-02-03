@@ -1,7 +1,7 @@
 <template lang="pug">
 .content
     h1 Les fonctions ?
-    p On va reprendres les bases, je ne vais pas m'y atterder. Mais une fonction, en mathématique, c'est quoi ?
+    p On va reprendre les bases, je ne vais pas m'y atterder. Mais une fonction, en mathématique, c'est quoi ?
     p Normalement, tout le monde à à l'idée f(x)=x
         sup 2
         | ou encore g(x)= 4x+2... Par exemple. Donc, en quelque sorte, une fonction c'est "on prends une valeur x" qui 
@@ -126,30 +126,36 @@
 
     p Sinon, je peux vous laisser avec quelque fonction choisis que j'ai trouver assez stylé :
     
-    section.section.is-large
-        .container
-            .carousel#carousel(data-slides-to-scroll="1")
-                .slider-container
-                    .slider-item
-                        .card
-                            .card-image
-                                figure.image
-                                    embed(width="1280" height="960" src="/math/fonction_carré.html")
-                    .slider-item 
-                        .card
-                            embed(src="/math/fonction_carré.html")
-                    .slider-item 
-                        .card
-                            embed(src="/math/fonction_carré.html")
-                    .slider-item 
-                        .card
-                            embed(src="/math/fonction_carré.html")
-                    .slider-item 
-                        .card
-                            embed(src="/math/fonction_carré.html")
-                    .slider-item 
-                        .card
-                            embed(src="/math/fonction_carré.html")
+    section.section
+        .slider
+            #carousel.carousel
+                .card
+                    header.card-header 
+                        p.card-header-title f(x)=x
+                            sup 2
+                    .card-image
+                            figure.image.is-5by3
+                                iframe(src="/math/fonction_carré.html" width="800" height="480" frameborder="0" allowfullscreen).has-ratio
+                .card
+                    header.card-header 
+                        p.card-header-title f(x)=e
+                            sup x
+                    .card-image
+                            figure.image.is-5by3
+                                iframe(src="/math/fonction_exp.html" width="800" height="480" frameborder="0" allowfullscreen).has-ratio
+                .card
+                    header.card-header 
+                        p.card-header-title f(x)=ln(x)
+                    .card-image
+                            figure.image.is-5by3
+                                iframe(src="/math/fonction_ln.html" width="800" height="480" frameborder="0" allowfullscreen).has-ratio
+                .card
+                    header.card-header 
+                        p.card-header-title f(x)=|x|
+                    .card-image
+                            figure.image.is-5by3
+                                iframe(src="/math/fonction_abs.html" width="800" height="480" frameborder="0" allowfullscreen).has-ratio
+        
 </template>
 
 

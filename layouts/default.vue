@@ -2,9 +2,9 @@
 div
     nav.navbar(role="navigation" aria-label="main navigation" style="z-index: 1").is-spaced.is-fixed-top
         .navbar-brand
-            .navbar-item
+            nuxt-link(to="/").navbar-item
                 img(src="/favicon.ico")
-                strong Chaweb
+                strong &nbsp;&nbsp;Chaweb
             #BurgerMenu.navbar-burger(role='button' @click="nav_activ = !nav_activ" :class="{'is-active': nav_activ}")
                 span
                 span
@@ -12,7 +12,7 @@ div
                 
         #navbarBasic.navbar-menu(:class="{'is-active': nav_activ}" @click="nav_activ = !nav_activ")
             .navbar-start
-                nuxt-link.navbar-item(to="/" :class="{'link-exact-active' : isRouteActive('/')}")
+                nuxt-link.navbar-item(to="/bio" :class="{'link-exact-active' : isRouteActive('/bio')}")
                     |bio 
                 .navbar-item.has-dropdown.is-hoverable
                     nuxt-link.navbar-link(to="/blog/s" :class="{'link-exact-active' : isRouteActive('/blog/s')}")
@@ -26,20 +26,11 @@ div
                     |me contacter
 
 
-            .navbar-end
-                .navbar-item
-                    .buttons
-                        a(@click="form = !form" ).button.is-primary
-                            strong s'inscrire
-
-    #form(v-if="form")
-        a.delete.block.is-large.is-danger(@click="form = !form" )
-        .box.block 
-            .block recevoir des mails
-            input.input#mail.block.is-info
-            button.block.button.is-success submit
-            br
-            a lien de contrat
+            //- .navbar-end
+            //-     .navbar-item
+            //-         .buttons
+            //-             a(@click="form = !form" ).button.is-primary
+            //-                 strong s'inscrire
 
     nuxt#pages.box.is-widescreen.container
 
@@ -58,7 +49,6 @@ export default {
   },
   data () {
     return {
-        form: false,
         nav_activ: false,
         catégories: this.$store.state.UpCat
     }
