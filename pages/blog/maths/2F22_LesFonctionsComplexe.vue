@@ -123,39 +123,39 @@
             |                      go.Scatter3d(x=df['x imaginaire'], y=df['x real'], z=df['y imaginaire'],mode='markers', name="imaginaire")])
             |fig.show() #tracer le graph
     p Voilà, je vous laisse admirer votre travail... Ou le debug, si cela ne fonctionne pas.
-    div(v-if="!isMobile()")
-        p Sinon, je peux vous laisser avec quelque fonction choisis que j'ai trouver assez stylé :
+    
+    p Sinon, je peux vous laisser avec quelque fonction choisis que j'ai trouver assez stylé :
+    
+    section.section
+        .slider
+            #carousel.carousel
+                .card
+                    header.card-header 
+                        p.card-header-title f(x)=x
+                            sup 2
+                    .card-image
+                            figure.image.is-5by3
+                                iframe(src="/math/fonction_carré.html" width="800" height="480" frameborder="0" allowfullscreen).has-ratio
+                .card
+                    header.card-header 
+                        p.card-header-title f(x)=e
+                            sup x
+                    .card-image
+                            figure.image.is-5by3
+                                iframe(src="/math/fonction_exp.html" width="800" height="480" frameborder="0" allowfullscreen).has-ratio
+                .card
+                    header.card-header 
+                        p.card-header-title f(x)=ln(x)
+                    .card-image
+                            figure.image.is-5by3
+                                iframe(src="/math/fonction_ln.html" width="800" height="480" frameborder="0" allowfullscreen).has-ratio
+                .card
+                    header.card-header 
+                        p.card-header-title f(x)=|x|
+                    .card-image
+                            figure.image.is-5by3
+                                iframe(src="/math/fonction_abs.html" width="800" height="480" frameborder="0" allowfullscreen).has-ratio
         
-        section.section
-            .slider
-                #carousel.carousel
-                    .card
-                        header.card-header 
-                            p.card-header-title f(x)=x
-                                sup 2
-                        .card-image
-                                figure.image.is-5by3
-                                    iframe(src="/math/fonction_carré.html" width="800" height="480" frameborder="0" allowfullscreen).has-ratio
-                    .card
-                        header.card-header 
-                            p.card-header-title f(x)=e
-                                sup x
-                        .card-image
-                                figure.image.is-5by3
-                                    iframe(src="/math/fonction_exp.html" width="800" height="480" frameborder="0" allowfullscreen).has-ratio
-                    .card
-                        header.card-header 
-                            p.card-header-title f(x)=ln(x)
-                        .card-image
-                                figure.image.is-5by3
-                                    iframe(src="/math/fonction_ln.html" width="800" height="480" frameborder="0" allowfullscreen).has-ratio
-                    .card
-                        header.card-header 
-                            p.card-header-title f(x)=|x|
-                        .card-image
-                                figure.image.is-5by3
-                                    iframe(src="/math/fonction_abs.html" width="800" height="480" frameborder="0" allowfullscreen).has-ratio
-            
 </template>
 
 
