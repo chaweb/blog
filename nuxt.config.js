@@ -1,3 +1,7 @@
+import path from 'path'
+import fs from 'fs'
+
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -47,11 +51,15 @@ export default {
   },
   server:{
     host:"0.0.0.0",
-    port:"80"
+    port:"80",
+    https: {
+      key: fs.readFileSync('./.ssh/server.key', 'utf8'),
+      cert: fs.readFileSync("./.ssh/server.crt", 'utf8')
+    }
   },
 
-   target : 'static',
-   router: {
-     base: '/blog/'
-   }
+  //  target : 'static',
+  //  router: {
+  //    base: '/blog/'
+  //  }
 }
