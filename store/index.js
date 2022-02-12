@@ -3,7 +3,7 @@ export const state = () => ({
     UpCat: ["math", "web", "livre", "design"], //Max 4 ! Sinon, c'est over
     blogs: ([{
         name: "Fonctions complexes",
-        tag: ["math"],
+        tag: ["math", "python"],
         description: "Dessiner des fonctions complexes sur python !",
         url: "/maths/2F22_LesFonctionsComplexe",
         date: "2022-02-02"
