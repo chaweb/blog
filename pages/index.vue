@@ -10,6 +10,8 @@
             nuxt-link(to="/contact")
                 button.button.is-primary(title="pour savoir comment me contacter") me contacter
             button.button.is-primary(title="patience, la fonctionnalité arrivera" disabled) s'inscrire
+        figure.image
+            img(src="PhotoDeProfil.png")#pp
 </template>
 
 <script>
@@ -19,3 +21,12 @@ export default {
     },
 }
 </script>
+
+<style lang="sass" scoped>
+#pp
+    $size: 25vw
+    max-width:$size
+    max-height:$size
+    width: auto
+    height: auto
+</style>

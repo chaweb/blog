@@ -1,3 +1,4 @@
+import fs from 'fs'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -39,11 +40,28 @@ export default {
   modules: [
     ['nuxt-highlightjs',{
       style: 'dracula'
-    }]
+    }],['nuxt-socket-io', { 
+      sockets: [{
+        url: 'http://localhost:3000', 
+        default: true,
+        vuex:{actions: [{testServer : "testVuex"}]} ,
+        namespaces: {
+          '/index': {
+            emitters: ['test --> test']
+          }
+        }
+      }]}],
   ],
-
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend (config, { isDev, isClient }) {
+ 
+      config.node = {
+           fs: 'empty'
+       }
+
+      // ....
+   }
   },
 
   //  target : 'static',

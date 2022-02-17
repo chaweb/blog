@@ -1,9 +1,8 @@
 <template lang="pug">
 .table-container
-    script(src="http://d3js.org/d3.v3.min.js" charset="utf-8")
     script(type="text/javascript").
             var tabulate = function (data,columns) {
-            var table = d3.select('#tableau').append('table').attr('class', 'table')
+                var table = document.querySelector('#tableau').append('table').attr('class', 'table')
                 var thead = table.append('thead')
                 var tbody = table.append('tbody')
 
@@ -39,13 +38,16 @@
 </template>
 
 <script>
+
 export default {
+
     mounted() {
-        try{
-            d3.csv(this.lien,function (data) {
-                    tabulate(data, Object.keys(data[0])) 
-            })
-        }catch{location.reload();}
+        this.$store.commit('read', this.link)
+
+        
+        // d3.csv(this.lien,function (data) {
+        //         tabulate(data, Object.keys(data[0])) 
+        // })
     },
     props:['lien']
 }
