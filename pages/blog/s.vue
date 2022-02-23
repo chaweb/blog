@@ -71,7 +71,7 @@ export default {
     },
     
     results(){
-        return (this.search !== false ? this.blogs.filter((blog) => {return blog.tag.some(elem => {return this.search.includes(elem)})}) :  this.blogs)
+        return (this.search !== false ? this.blogs.filter((blog) => {return blog.tag.some(elem => {return this.search.includes(elem)})}) :  this.blogs.filter((blog) => {return blog.tag.some(elem => {return elem != "secret"})}))
     }
   },
     
