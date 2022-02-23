@@ -11,7 +11,7 @@
                 li application
         li ETLV1
     h3 2 - Remise en place des mathématiques obligatoire au lycée
-    h3 3 - "butget numérique" donner aux établisements scolaires
+    h3 3 - "budget numérique" donner aux établisements scolaires
     h3 4 - Soutien plus important aux applications numériques françaises concurentes internationnaux
     h3 5 - Changement officiel de prénom 
     p changement à + de 16ans (sans accords parentaux) possible avec l'un de ces dossiers :
@@ -27,5 +27,5 @@
         li mention du sexe X voir suppresion de cette mention
         li changement de prénom d'usage plus simple sur les papiers : l'identité n'est plus lié à un prénom-nom mais un numéro, permetant aux personnes voulant mettre un prénom différent de pouvoir le faire.
         li reconnaisance des Non-binaires dans la société et écriture inclusif utiliser par l'établisements
-    h3 8 - amélioration des droits handis et HDAH
+    h3 8 - amélioration des droits handis et neuroA
 </template>
