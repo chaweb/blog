@@ -21,7 +21,7 @@
         li lettre de motivation 
     p changement de prénom à - de 16ans avec accords parentaux ou attestion médical
     h3 6 - création d'un cours "tolérence et liberté" au collège
-    p contre la decrimination et apprendre sur les communauté des minaurités et leurs histoire
+    p contre la discrimination et apprendre sur les communautés des minorités et leurs histoire
     h3 7 - amélioration des droits LGBT+ 
     ul 
         li mention du sexe X voir suppresion de cette mention
