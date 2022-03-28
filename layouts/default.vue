@@ -46,9 +46,7 @@ export default {
         // socket.io-client opts:
         reconnection: false
     })
-    this.socket.emit('test', (resp) => {
-        console.log(resp)
-    })
+    this.socket.emitP('test')
   },
   methods: {
     isRouteActive(id) {

@@ -1,10 +1,10 @@
 import fs from "fs"
+import path from "path"
 
 export default function Svc(socket, io) {
     return Object.freeze({
         test(){
-            console.log("coucou")
-            socket.emit("testServer", "vas te faire")
-        }
+            socket.emit("testServer", "message de liaison entre serveur")
+        }, 
     })
 }

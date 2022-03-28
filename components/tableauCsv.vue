@@ -38,16 +38,22 @@
 </template>
 
 <script>
+import { resolve } from 'path/posix'
 
 export default {
 
     mounted() {
-        this.$store.commit('read', this.link)
+        this.socket = this.$nuxtSocket({
+            // nuxt-socket-io opts: 
+            channel: '/CSV', // connect to '/CSV'
 
+            // socket.io-client opts:
+            reconnection: false
+        })
+        this.socket.emitP('CSVtoJS', this.lien, (resp) =>{
+            tabulate(resp, resp[0])
+        })
         
-        // d3.csv(this.lien,function (data) {
-        //         tabulate(data, Object.keys(data[0])) 
-        // })
     },
     props:['lien']
 }

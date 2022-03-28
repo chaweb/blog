@@ -1,4 +1,3 @@
-import fs from 'fs'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -44,28 +43,17 @@ export default {
       sockets: [{
         url: 'http://localhost:3000', 
         default: true,
-        vuex:{actions: [{testServer : "testVuex"}]} ,
+        vuex:{actions: ["testServer --> testVuex", "CSV --> CSV"]} ,
         namespaces: {
           '/index': {
-            emitters: ['test --> test']
+          }
+        },
+        namespaces: {
+          '/CSV': {
           }
         }
       }]}],
   ],
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-    extend (config, { isDev, isClient }) {
- 
-      config.node = {
-           fs: 'empty'
-       }
-
-      // ....
-   }
-  },
-
-  //  target : 'static',
-  //  router: {
-  //    base: '/blog/'
-  //  }
+  build: {},
 }

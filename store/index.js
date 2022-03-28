@@ -23,18 +23,29 @@ export const state = () => ({
         url: "/secret/politique",
         date: "2022-02-02"
     }]).sort((a, b) => {return new Date(b.date) - new Date(a.date)}), 
-    temp : ""
+    temp : "",
+    csv : []
+
   })
   
 export const mutations = {
     TempConf(state, msg){
         state.temp = msg
+    },
+    CSVvar(state, list){
+        state.csv = list
     }
 }
 
-export const action = {
+export const actions = {
     testVuex({commit}, TestMess){
-        console.log("coucou314")
         commit('TempConf', TestMess)
+        console.log(this.state.temp)
+        setInterval(() =>{commit('tempConf', "")}, 500)
+    },
+    CSV({commit}, csv){
+        commit("CSVvar", csv)
+        console.log(this.state.csv)
+        setInterval(() =>{commit("CSVvar", [])}, 500)
     }
 }

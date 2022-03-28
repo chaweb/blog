@@ -29,4 +29,7 @@ export default {
     max-height:$size
     width: auto
     height: auto
+    border-bottom: solid 4px white
+    border-bottom-left-radius: 10px
+    border-bottom-right-radius: 10px
 </style>
