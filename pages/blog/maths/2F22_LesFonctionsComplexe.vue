@@ -113,8 +113,6 @@
     p En fessant
     pre
         code(v-highlight).py df #ou print(df)
-    p nous pouvons remarquer que le tableau est remplie de valeur... un peu illisible.
-    tableauCsv(lien="/math/fonction_carré.csv")
     p Maintenant, nous allons tracer ! On a notre tableau, nos resultat... Donc, c'est bon ! On peut tracer.
 
     pre
