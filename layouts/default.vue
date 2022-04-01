@@ -36,12 +36,21 @@ div
 
     footer.footer
         .content
+            h5 legals notices
             a(rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/")
                 img(alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png")
                 br
                 |This work is licensed under.
 
             p Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+
+            a(href="https://bulma.io")
+                img(src="/made-with-bulma--dark.png" width="128" height="24")
+            br
+            a(href="https://nuxtjs.org")
+                span.tag.is-medium
+                    a made with Nuxt
+                    img(src="https://nuxtjs.org/_nuxt/icons/icon_64x64.a3b4ce.png" width="32" height="32" style="margin:10px; margin-right:0")
 
 </template>
 
