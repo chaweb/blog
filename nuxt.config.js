@@ -39,7 +39,9 @@ export default {
   modules: [
     ['nuxt-highlightjs',{
       style: 'dracula'
-    }],['nuxt-socket-io', { 
+    }],
+    
+    ['nuxt-socket-io', { 
       sockets: [{
         url: 'http://localhost:3000', 
         default: true,
@@ -53,6 +55,19 @@ export default {
           }
         }
       }]}],
+
+      [
+        'nuxt-mq',
+        {
+          // Default breakpoint for SSR
+          defaultBreakpoint: 'sm',
+          breakpoints: {
+            sm: 768,
+            md: 1023,
+            lg: Infinity
+          }
+        }
+      ]
   ],
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

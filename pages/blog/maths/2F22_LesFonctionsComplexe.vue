@@ -123,42 +123,55 @@
     p Voilà, je vous laisse admirer votre travail... Ou le debug, si cela ne fonctionne pas.
     
     p Sinon, je peux vous laisser avec quelque fonction choisis que j'ai trouver assez stylé :
+    .card.block
+        header.card-header 
+            p.card-header-title f(x)=x
+                sup 2
+            button.button.is-primary(style="align-self: center; margin-right:10px" @click="graph_show_1 = !graph_show_1" ) montrer la fonction
+        .card-image(v-if="graph_show_1")
+                figure.image.is-5by3
+                    iframe(src="/math/fonction_carré.html" width="800" height="480" frameborder="0" allowfullscreen).has-ratio
+    .card.block
+        header.card-header 
+            p.card-header-title f(x)=e
+                sup x
+            button.button.is-primary(style="align-self: center; margin-right:10px" @click="graph_show_2 = !graph_show_2") montrer la fonction
+        .card-image(v-if="graph_show_2")
+                figure.image.is-5by3
+                    iframe(src="/math/fonction_exp.html" width="800" height="480" frameborder="0" allowfullscreen).has-ratio
+    .card.block
+        header.card-header 
+            p.card-header-title f(x)=ln(x)
+            button.button.is-primary(style="align-self: center; margin-right:10px" @click="graph_show_3 = !graph_show_3") montrer la fonction
+        .card-image(v-if="graph_show_3")
+                figure.image.is-5by3
+                    iframe(src="/math/fonction_ln.html" width="800" height="480" frameborder="0" allowfullscreen).has-ratio
+    .card.block
+        header.card-header 
+            p.card-header-title f(x)=|x|
+            button.button.is-primary(style="align-self: center; margin-right:10px" @click="graph_show_4 = !graph_show_4")  montrer la fonction
+        .card-image(v-if="graph_show_4")
+                figure.image.is-5by3
+                    iframe(src="/math/fonction_abs.html" width="800" height="480" frameborder="0" allowfullscreen).has-ratio
     
-    section.section
-        .slider
-            #carousel.carousel
-                .card
-                    header.card-header 
-                        p.card-header-title f(x)=x
-                            sup 2
-                    .card-image
-                            figure.image.is-5by3
-                                iframe(src="/math/fonction_carré.html" width="800" height="480" frameborder="0" allowfullscreen).has-ratio
-                .card
-                    header.card-header 
-                        p.card-header-title f(x)=e
-                            sup x
-                    .card-image
-                            figure.image.is-5by3
-                                iframe(src="/math/fonction_exp.html" width="800" height="480" frameborder="0" allowfullscreen).has-ratio
-                .card
-                    header.card-header 
-                        p.card-header-title f(x)=ln(x)
-                    .card-image
-                            figure.image.is-5by3
-                                iframe(src="/math/fonction_ln.html" width="800" height="480" frameborder="0" allowfullscreen).has-ratio
-                .card
-                    header.card-header 
-                        p.card-header-title f(x)=|x|
-                    .card-image
-                            figure.image.is-5by3
-                                iframe(src="/math/fonction_abs.html" width="800" height="480" frameborder="0" allowfullscreen).has-ratio
-        
 </template>
 
 
 <script>
 export default {
+
+    watch: {
+        },
+    data () {
+        return {
+            graph_show_1 : false,
+            graph_show_2 : false,
+            graph_show_3 : false,
+            graph_show_4 : false,
+        }
+    },
+    methods: {
+    },
     mounted() {
         bulmaCarousel.attach('#carousel', {
                 slidesToScroll: 1,
@@ -166,7 +179,5 @@ export default {
                 loop:true
             }); 
     },
-    methods : {
-    }
 }
 </script>
