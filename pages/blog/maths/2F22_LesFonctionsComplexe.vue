@@ -6,7 +6,7 @@
         sup 2
         | ou encore g(x)= 4x+2... Par exemple. Donc, en quelque sorte, une fonction c'est "on prends une valeur x" qui 
         br 
-        | "se transforme en une autre valeur f(x) (ou g(x))"
+        | "se transforme en une autre Variable f(x) (ou g(x))"
 
     p Bon, on sait, plus au moins, ce qu'est une fonction... Alors testons ! Je vais prendre la valeur où x=2 :
     p Pour f(x), on a 4 car f(2) = 2
@@ -26,7 +26,7 @@
         strong -1
 
     p Si vous ne voyez pas où est le problème, c'est ou que vous connaissez déjà, ou que vous ne connaissez qu'un nombre réel (donc 1,-1,5, racine de 2, ect..) NE FERA JAMAIS un negatif. 
-        | C'est assez facile, un nombre multiplier par lui même ne pourra jamais être negatif. 
+        | C'est assez facile, un nombre multiplier par lui même ne pourra jamais être negatif. Car un nombre négatif multiplié par un autre nombre négatif nous donneras un nombre positif suivant la loi des signes
     p Donc c'est ça le "i" qui va se glisser partout. Mais on pourra aussi parler de "j" qui est dans le principe le même.
     p Les nombres complexes se situ non plus sur une droite, mais sur un plan. Avec pour absicisse les réels, et ordonnée les imaginaires. On notera donc que le point z
         sub 1
@@ -110,7 +110,7 @@
             |       'y real':y_real,
             |       'y imaginaire':y_imaginaire})
 
-    p En fessant
+    p En faisant 
     pre
         code(v-highlight).py df #ou print(df)
     p Maintenant, nous allons tracer ! On a notre tableau, nos resultat... Donc, c'est bon ! On peut tracer.

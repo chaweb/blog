@@ -7,12 +7,12 @@
     | Je suis arrivée dans le web en commencant un peu bêtement, avec scratch - le compte encore ouvert 
     | (sur un autre pseudo). 
   p J'avais soif de savoir, de découvrir ce monde, sur le quel je n'étais qu'utilisatrice. 
-    | Ce monde de création, d'art si je puis dire, via seulement des lignes de code à taper. 
+    | Ce monde de création, d'art via des simples lignes de code. 
     | Donc, je me suis formée au python pendant les grandes vacances d'entre 5-4ème (france)... 
     | Ce qui n'a rien à voir avec le web. Puis, le livre ! Le livre qui a changer ma perception... Bon, j'exagère.
     | Ce livre ne parlais qu'HTML et Css. Pendant quelques années, je ne fessais que ça. 
   p Puis, il est arrivé le confinement durant la fin de 2nd en 2020, à cause d'une pandemie mondiale. 
-    | Bien beaucoup de négatif soit arrivé mais cela ma permis d'apprendre encore plus. Sur le JS principalement.
+    | Bien que beaucoup de négatif soit ressortit de cette crise, cela m’a permis d’apprendre encore plus. Sur le javascript (JS) principalement.
     | D'abord des petits bots discord avec nodejs, puis du js pur et simple avec HTML et Css. 
     | Pour finir sur du VueJs l'année d'après. Et apprendre le monde de Nuxtjs ! 
 
