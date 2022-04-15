@@ -1,6 +1,6 @@
 
 export const state = () => ({
-    categories: ["math", "web", "python", "programation", "livre", "design", "modelisation"],
+    categories: ["math", "web", "python", "programmation", "livre", "design", "modelisation"],
     UpCat: ["math", "web", "livre", "design"], //Max 4 ! Sinon, c'est over
     blogs: ([{
         name: "Fonctions complexes",
