@@ -1,8 +1,8 @@
 <template lang="pug">
 .content
-    h1 Defi basti UI
+    h1 Defi basti UI / benjamin code
     h2 concept: 
-    p BistiUI à fait un defi avec Benjamin code, le principe : refaire en codant à l'aveugle ce qu'avait fait basti en sondage avec son instagram.
+    p BastiUI à fait un defi avec Benjamin code, le principe : refaire en codant à l'aveugle ce qu'avait fait basti en sondage avec son instagram.
     p la vidéo de basti et benjamin sont plus explicatif ^^"
     p
         a(href="http://youtu.be/NIz7EiyunmY") la vidéo de basti
