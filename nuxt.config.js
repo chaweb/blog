@@ -40,7 +40,7 @@ export default {
     ['nuxt-highlightjs',{
       style: 'dracula'
     }],
-    
+    'nuxt-material-design-icons-iconfont',
     ['nuxt-socket-io', { 
       sockets: [{
         url: 'http://localhost:3000', 
