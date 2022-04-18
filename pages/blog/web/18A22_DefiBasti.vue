@@ -5,9 +5,9 @@
     p BastiUI a fait un defi avec Benjamin code, le principe : refaire en codant à l'aveugle ce qu'avait fait basti en sondage avec son instagram.
     p la vidéo de basti et benjamin sont plus explicatif ^^"
     .buttons
-        button.button.is-info(href="http://youtu.be/NIz7EiyunmY").block la vidéo de basti
+        button.button.is-info(onclick="location.href = 'http://youtu.be/NIz7EiyunmY'").block la vidéo de basti
                 icon(icon="link")
-        button.button.is-info(href="https://youtu.be/6upFEYuOrr8").block la vidéo de benjaminCode
+        button.button.is-info(onclick="location.href = 'https://youtu.be/6upFEYuOrr8'").block la vidéo de benjaminCode
                 icon(icon="link")
     h2 resultat
     div#travail
