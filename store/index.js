@@ -8,7 +8,20 @@ export const state = () => ({
         description: "Dessiner des fonctions complexes sur python !",
         url: "/maths/2F22_LesFonctionsComplexe",
         date: "2022-02-02"
+    },{
+        name: "Defi BastiUI",
+        tag: ["web"],
+        description: "à l'aveugle, faire des emojies !",
+        url: "/web/18A22_DefiBasti",
+        date: "2022-04-18"
     },
+    // {
+    //     name: "Etre user friendly",
+    //     tag: ["web", "design"],
+    //     description: "comment être un bon dev respecteux de l'utilisateur ?",
+    //     url: "/web/16A22_EtreUserFriendly",
+    //     date: "2022-04-16"
+    // },
     {
         name: "coucou",
         tag: ["secret"],
