@@ -8,6 +8,12 @@ export const state = () => ({
         description: "Dessiner des fonctions complexes sur python !",
         url: "/maths/2F22_LesFonctionsComplexe",
         date: "2022-02-02"
+    },{
+        name: "être user friendly",
+        tag: ["web"],
+        description: "Comment et pourquoi être user friendly ?",
+        url: "/maths/16A22_EtreUserFriendly",
+        date: "2022-04-16"
     },
     {
         name: "coucou",
@@ -39,13 +45,6 @@ export const mutations = {
 
 export const actions = {
     testVuex({commit}, TestMess){
-        commit('TempConf', TestMess)
-        console.log(this.state.temp)
-        setInterval(() =>{commit('tempConf', "")}, 500)
-    },
-    CSV({commit}, csv){
-        commit("CSVvar", csv)
-        console.log(this.state.csv)
-        setInterval(() =>{commit("CSVvar", [])}, 500)
+        console.log(TestMess)
     }
 }

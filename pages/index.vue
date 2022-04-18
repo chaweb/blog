@@ -9,7 +9,7 @@
                 button.button.is-primary(title="un blog, le principe... d'un blog") blog
             nuxt-link(to="/contact")
                 button.button.is-primary(title="pour savoir comment me contacter") me contacter
-            button.button.is-primary(title="patience, la fonctionnalité arrivera" disabled) s'inscrire
+            button.button.is-primary(title="patience, la fonctionnalité arrivera") s'inscrire
         figure.image
             img(src="PhotoDeProfil.png")#pp
 </template>

@@ -22,7 +22,6 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    "@/bulma-0.9.3/bulma.sass",
   ],
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -36,14 +35,15 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
+  modules: [['nuxt-vuex-localstorage', {mode: 'debug'}],
+    '@nuxtjs/style-resources',
     ['nuxt-highlightjs',{
       style: 'dracula'
     }],
-    
-    ['nuxt-socket-io', { 
+    'nuxt-material-design-icons-iconfont',    
+    [
+      'nuxt-socket-io', { 
       sockets: [{
-        url: 'http://localhost:3000', 
         default: true,
         vuex:{actions: ["testServer --> testVuex", "CSV --> CSV"]} ,
         namespaces: {
@@ -51,13 +51,12 @@ export default {
           }
         },
         namespaces: {
-          '/CSV': {
+          '/login': {
           }
         }
       }]}],
 
-      [
-        'nuxt-mq',
+      [        'nuxt-mq',
         {
           // Default breakpoint for SSR
           defaultBreakpoint: 'sm',
@@ -69,6 +68,10 @@ export default {
         }
       ]
   ],
+  styleResources: {
+    sass : ['@/bulma-0.9.3/bulma.sass']
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }

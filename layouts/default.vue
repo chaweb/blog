@@ -26,15 +26,15 @@ div
                     |me contacter
 
 
-            //- .navbar-end
-            //-     .navbar-item
-            //-         .buttons
-            //-             a(@click="form = !form" ).button.is-primary
-            //-                 strong s'inscrire
+            .navbar-end
+                .navbar-item
+                    .buttons
+                        a(@click="invertDark()" ).button.is-primary
+                            icon(:icon="!dark ? 'nights_stay' : 'brightness_7'" :color="dark? '#000' : '#fff'") 
 
     nuxt#pages.box.is-widescreen.container
 
-    footer.footer
+    footer.footer(lang="en")
         .content
             h5 legals notices
             a(rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/")
@@ -64,7 +64,8 @@ export default {
         // socket.io-client opts:
         reconnection: false
     })
-    this.socket.emitP('test')
+    this.dark = this.$store.state.localStorage.DarkMode
+    if (this.dark != true){this.dark = false}
   },
   methods: {
     isRouteActive(id) {
@@ -73,56 +74,49 @@ export default {
         } else {
             return this.$route.path.includes(id)
         } 
-    },
+    },invertDark(){
+        this.dark =  !this.dark
+        this.$store.commit('localStorage/DarkState', this.dark)
+    }
   },
   data () {
     return {
         nav_activ: false,
-        catégories: this.$store.state.UpCat
+        catégories: this.$store.state.UpCat,
+        dark: false
     }
+  },
+  head(){
+      return{
+            bodyAttrs: {
+                class: this.dark ? 'dark' : ''
+            }
+        }
   }
-  
+
 }
 </script>
 
 
 <style lang="sass">
+
 html
-    background-color: #141414
+    background-color: $background-color
     padding-top: 100px
     
 </style>
 
 <style lang="sass" scoped>
 
+
 #pages
     margin-top:20px
-    background-color: lighten(#141414, 5%)
+    background-color: lighten($background-color, 5%)
     margin-bottom: 30px
 
 #topTagsTitle
-    background-color: #303030
+    background-color: darken($primary, 25%)
 
-#form
-    background-color: #000000B0
-    z-index: 3
-    position: fixed
-    left: 0
-    right: 0
-    top: 0
-    bottom:0
-    & > *
-        margin: 10px
-    & > div
-        padding: 10px
-        margin-top: 5em
-        background-color: #123
-        z-index: 4
-        & > input
-            max-width: 500px
-            margin-right:50px  
-
-    
 </style>
 
 
