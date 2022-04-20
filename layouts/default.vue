@@ -56,16 +56,6 @@ div
 
 <script>
 export default {
-  mounted() {
-    this.socket = this.$nuxtSocket({
-        // nuxt-socket-io opts: 
-        channel: '/index', // connect to '/index'
-
-        // socket.io-client opts:
-        reconnection: false
-    })
-    this.socket.emitP('test')
-  },
   methods: {
     isRouteActive(id) {
         if (id == '/') {

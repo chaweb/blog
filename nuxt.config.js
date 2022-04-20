@@ -41,20 +41,6 @@ export default {
       style: 'dracula'
     }],
     'nuxt-material-design-icons-iconfont',
-    ['nuxt-socket-io', { 
-      sockets: [{
-        url: 'http://localhost:3000', 
-        default: true,
-        vuex:{actions: ["testServer --> testVuex", "CSV --> CSV"]} ,
-        namespaces: {
-          '/index': {
-          }
-        },
-        namespaces: {
-          '/CSV': {
-          }
-        }
-      }]}],
 
       [
         'nuxt-mq',
