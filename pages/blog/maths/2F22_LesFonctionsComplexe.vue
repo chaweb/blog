@@ -1,130 +1,92 @@
 <template lang="pug">
 .content
-    h1 Les fonctions ?
-    p On va reprendre les bases, je ne vais pas m'y atterder. Mais une fonction, en mathématique, c'est quoi ?
-    p Normalement, tout le monde a à l'idée f(x)=x
-        sup 2
-        | ou encore g(x)= 4x+2, par exemple. Donc, en quelque sorte, une fonction c'est "on prends une valeur x" qui 
-        br 
-        | "se transforme en une valeur : f(x) (ou g(x))"
-
-    p Bon, on sait, plus au moins, ce qu'est une fonction... Alors testons ! Je vais prendre la valeur où x=2 :
-    p Pour f(x), on a 4 car f(2) = 2
-        sup 2 
-        | = 4
-
-    p Mais pour g(x), on obtient 10 ! Car g(2) = 4×2+2 = 10
-
-    p Bon, je suis aller assez vite, car ce n'est pas ce qui m'intèresse. Je parle de fonctions complexes dans mon blog. Mais nous ne savons pas ce qu'est un "nombre complexe"
-
-    h1 KESCé un nombre complexe ?
-
-    p En quelque sorte : 
-        strong i
-        sup 2 
-        | = 
-        strong -1
-
-    p Si vous ne voyez pas où est le problème, c'est ou que vous connaissez déjà, ou que vous ne savez pas qu'un nombre réel (donc 1,-1,5, racine de 2, ect..) NE FERA JAMAIS un negatif. 
-        | C'est assez facile, un nombre multiplier par lui même ne pourra jamais être negatif. Car un nombre négatif multiplié par un autre nombre négatif nous donneras un nombre positif suivant la loi des signes.
-    p Donc c'est ça le "i" qui va se glisser partout. Mais on pourra aussi parler de "j" qui est dans le principe le même mais en physique.
-    p Les nombres complexes se situe non plus sur une droite, mais sur un plan. Avec pour absicisse les réels, et ordonnée les imaginaires. On notera donc que l'affix du point z
-        sub 1
-        | = 1+3j à pour absicisse 1 et ordonnée 3 z
-        sub 1
-        |(1;3). (et non "3j" car on prends juste le nombre avant le "j"... sans le "j").
-
-    p On parlera aussi de "parti imaginaire" qui justement est la valeur de l'ordonnée et de "parti réelle" qui est la valeur des absicisses.
-
-    p Alors, avec ça, on peut faire plein de chose ! Comme déjà, aimer les maths ! Mais aussi, prendre un dolipran. Parce que là, on va passer au dur, un mélange des 2 !
-
-    h1 Les fonctions complexes
-    p Bon, je vais vous avouez que je ne connais pas non plus le terme exacte. 
-    p Pour ce qui va suivre, on va utiliser python, je ne vais expliquer ce que c'est... Internet est là, mais en quelque sorte, c'est un langage de programation assez simple.
-    p Nous allons, enfin, débuter. 
-
-    h3 initialiser
-
-    p pour débuter, on va devoir mettre ce petit bout de code, dès le debut ! 
-    pre
-        code(v-highlight).py
-            |import cmath as cm                 #pour les calcules des nombres complexes
-            |import pandas  as pd               #pour avoir des tableaux assez grands
-            |import plotly.graph_objects as go  #pour dessiner de jolie dessin (alias, les graphs)
-            |import numpy as np                 #pour les calculs un peu compliqué
-            |import math                        #pareille parce que c'est bien ! 
-    p Comme ça, j'ai envie de dire : c'est fait ! Si vous n'avez pas le module directement d'installer -je sais que sur 
-    a(href="https://colab.research.google.com") google colab
-    |  c'est déjà installer- je vous conseille de tout installer, en recherchant sur internet les modules.
-    p On va commencer un peu à coder, enfin... A initier notre fonction !
-    pre
-        code(v-highlight).py
-            |def function(x): #definir la fonction math
-            |   try:
-            |       return x**2 #tester la fonction
-            |   except:
-            |       return math.nan + math.nan*1j #si vraiment ça ne veut pas, on a un resultat de secours
-    p Mainenant, ça va être la partie plus... technique. 
-    p On va devoir jouer entre les variables. Le but est d'avoir tout un plan de cordonner pour donner ensuite sa valeur en imaginaires (on vera plus tard pour séparé la partie imaginaire des réels).
+    h1 Intro
+    p Pour ce premier article de mon blog, je voulais vous parler de 2 choses que j’aime : Les mathématiques et l’informatique.
+    p C’est pour cela, qu’aujourd’hui, je vais vous présenter en détail comment faire un grapher sur python, en 3d, d’une fonction inclu dans l’ensemble des nombres complexes. 
+    p Je vais partir du principe que vous êtes au moins en 3eme, certain terme ici pourront en écorché certaine personnes. Même si j'essayerais de faire du tout public.
+    h2 Les nombres complexes ?
+    p Sans rentrer dans les détails, un nombre complexe permet d’avoir une autre vision des ensembles des nombres. Vous connaissez donc tout les ensembles : 
     br
-    p Donc, d'abord, on initialise un tableau "x" pour qu'elle prenne pour entre 20 et -20 : 
-    pre
-        code(v-highlight).py x = [y/5 for y in range(-100,101)] #creation d'une liste prenant entre -100/5 = -20 inclu et 101/5 = 20,2 exclu cela prend jusqu'à la valeur 100/5 = 20.
-    p avec un pas de 1/5 (0,2).
-    p Puis, dans un tableau "x_imaginaire" on y rajoute à fois la longueur de "x". Pour enfin, nous mettre sur un plan de [-20;20] pour x et de [-20;20] pour y et de pas de 0.2.
-    pre
-        code(v-highlight).py x_imaginaire = x*len(x)
-    p Dans -encore- un autre tableau, on y met les "x_imaginaire" mais cette fois trier. Permettant d'avoir des valeurs en boucle sur Y et des valeurs trier sur X (cela va être sans doute plus logique à la fin...)
-    pre
-        code(v-highlight).py x_real = sorted(x_imaginaire)
+    p N, Les entiers naturelles : 0,1,2,3,...,11487,...
+    p Enfin, il y a en beaucoup.
+    br
+    p Z, Les entiers relatives: -1,-2,-3,...,-11487,...
+    p Les nombres naturelles sont les nombres négatifs, et sont inclus dans les entiers : N inclu dans Z
+    br
+    p D, les décimaux : 3.5, 2.4, -8.01, ect…
+    p Les nombres relatives sont écrit avec la virgules et un nombre qui la suit. Ce sont aussi tout les nombres des ensembles précédents
+    br
+    p Q, les quotients : ⅓, ⅙, …, -1/547, ect… 
+    p Les nombres quotients ont la particularité de s'écrire par la division de 2 nombres entiers
+    L’ensemble des quotients inclue les entiers. 
+    br
+    p R, les réels : pi, racine de 2, ect…
+    p Les nombres réels ne peux pas s’écrire simple, se sont souvent des calculs (sauf pour les quotients) qui permette d’avoir leur valeur exact : on peut ni les simplifier par des quotients, ni par des décimaux sans les arrondis. Cette ensemble inclu aussi les ensemble précédents
+    br
+    p Maintenant, les nombres complexes sont plus… Complexe. On a inventé ses nombres car on devait trouver une solution à des expressions comme racine de -1 ou a x^2+1 = 0 (qui revient au même). Car en électricité, je ne vais m'éterniser sur les calculs, mais certain calcul d'électricité ont ce problème soluble qu’en Mathématique est insoluble. Donc, après certaine convention, le i pour imaginaire en Mathématique ce transforme en j pour la physique (le i étant déjà donner pour l’intensité de la Physique). Sur python, c'est bien le j qui est utiliser, mais n'ayez pas peur en voyant des "i" ou des "j", c'est la même choses. 
+    br
+    p On a un nouvel ensemble : les Complexes. l’ensemble C. C’est un ensemble assez particulier où i^2 vaut -1. 
+    br
 
-    p ENFIN ! On a notre plan, sur le quel on aura toutes nos valeurs. Et logiquiment, ensuite, nos resultats.
-    p Mais ce n'est pas fini, il reste le tableau "x" qu'il faut qu'on change. Pour cela, On initialise à une valeur (comme 0) pour pouvoir le re-changer et mettre le nombre entièrement avec sa partie réelle et sa partie imaginaire.
+    h2 Les fonctions complexes
+
+
+    p ou fonction à variable complexe pour être précise. Ces sont des fonctions, comme on apprends au collège mais incluant cet ensemble de nombre complexe précédemment montré. 
+
+    p Pour ce qui va faire, à la suite, on aura besoin de python. Si vous ne l’avez pas, je conseille de suivre d’autre tutoriels sur l’installation de python3. Si vous ne voulez pas vous embêter à l’installer sur votre ordinateur, je vous conseille d’aller voir sur 
+        a(href="https://colab.research.google.com/") colab.research.google.com
+        | cela vous permettra de tout faire sans installation au prérequis. 
+
+    p Pour débuter le code, on aura besoin de quelque module, seuls panda et plotly faudra installer si vous êtes sur votre ordinateur. 
+
     pre
         code(v-highlight).py
-            |x=[0 for x in x_real]
-            |
-            |for i in range(len(x_real)):
-            |   x[i] = x_real[i] + x_imaginaire[i]*1j
-    p Là, on a fini l'initialisation des variables, on peut toucher à ce que je pense être plus intèressant : 
+            | import pandas  as pd               #pour avoir des tableaux assez grands
+            | import plotly.graph_objects as go  #pour dessiner de jolie dessin (alias, les graphs)
+            | import cmath                       #pour des calculs complexes tel que les log ou exponentielle
+
+            | def newRange(start, stop, step=1): #pour pouvoir utiliser des virgulles dans les lists
+            |     result = [start]
+            |     while stop > result[-1]:
+            |         result.append(result[-1] + step)
+            |     return result
+
+    p le "newRange" permet d'avoir la même fonction de range mais avec des nombres plus precis, car le vrai range de python ne nous permet d'avoir que des nombres entiers. Si on devait donc avoir des nombres autres, on avait une erreur de la part de python. 
+
+    p Pour dessiner en 3d, faut déjà penser au plan des entrées qu’on devra prendre. L’intervalle et la resolution seront 2 paramètre, cela depend de ce que vous voulez voir et du temps que cela prendra. 
+
+    p Si vous mettez un grand intervalle, votre graphique sera peut être grand. Mais mettra du temps si votre resolution est petite.
+
+    p C'est pour cela que je vous conseille de mettre une resolution pas trop grandes au debut, puis d'affiner vos calcules au fur et à mesure. Après plusieurs essaie, j'ai trouver que pour mon exemple, c'est bien d'être entre -20-20i et 20+20i. Donc mon entré se situe entre [-20,20] pour faire un carée de 40 de coté.
+
+    p puis, ma resolution est de 0.2, c'est comme ça qu'on a une liste de nombre tel que -20, -19.8, -19.6, ... jusqu'à ..., 19.6, 19,8, 20. 
+
+    p Mais ici, on a qu'une liste, qu'on pourrait imaginé être celui des réels, donc, on a fait une droite. Faut l'autre droite, pour chaque réels, on a le même nombre de réels : le -20 va avoir une liste entre -20 et 20, le 19,8 va avoir une liste entre -20 et 20, ect... cela va demander beaucoups de temps si vous n'avez pas de bon ordinateur, c'est la que vient la mise en place du plan : 
     
-    
-    h3 LE TABLEAU !
-
-    p Avant, cela, regard-on la longueur de "x" pour voir : 
-    pre
-        code(v-highlight).py print(len(x))
-    p ça fait beaucoup ? Bon, en vrai, faut avoir de la ram : c'est sur. Mais ça peut aller si vous êtes avec Gcolab.
-    p Mainenant, on va mettre les resultats dans 2 tableaux distincts : 
-        
-        li  une pour la valeur réelle
-        
-        li  une pour la valeur imaginaire
-
     pre
         code(v-highlight).py
-            |y_real = [(function(x)).real for x in x] #parti réelle des resultats
-            |y_imaginaire= [(function(x)).imag for x in x] #parti imaginaire des resultats
+                | min = -20
+                | max = 20
+                | intervalle = [min, max]
+                | resolution = .2
 
-    p Enfin, on met tout ça dans un tableau "panda" ou comme on l'a mis en raccourcis : "pd"
-    pre
-        code(v-highlight).py
-            |df = pd.DataFrame({'x real':x_real,
-            |       'x imaginaire':x_imaginaire,
-            |       'y real':y_real,
-            |       'y imaginaire':y_imaginaire})
 
-    p En faisant
-    pre
-        code(v-highlight).py df #ou print(df)
-    p peut voir toutes les valeurs brutes. Nous permet de voir si notre tableau n'a pas d'erreur.  
-    p Maintenant, nous allons tracer ! On a notre tableau, nos resultats... Donc, c'est bon ! On peut tracer.
+                | x = newRange(intervalle[0], (intervalle[1] + resolution), resolution)
 
-    pre
-        code(v-highlight).py
-            |fig = go.Figure(data=[go.Scatter3d(x=df['x imaginaire'], y=df['x real'], z=df['y real'],mode='markers', name="real"),
-            |                      go.Scatter3d(x=df['x imaginaire'], y=df['x real'], z=df['y imaginaire'],mode='markers', name="imaginaire")])
-            |fig.show() #tracer le graph
+                | #creation du plan :
+
+                | x_imaginaire = x*len(x) #nombre imaginaire
+                | x_real = sorted(x_imaginaire) #nombre real
+
+
+
+                | x = [0 for x in x_real] #reset du tableau
+
+
+                | x = [(x_real[x] + x_imaginaire[x]*1j) for x in range(len(x_real))] 
+    p A la fin de ce programe, on a donc un tableau, x, portant comme nombres [-20-20j, -20-19.8j, ...]
+    p nombre tableau à 1 dimension, car il n'y a qu'une entré au tableau, permet à lui seul d'avoir un plan de 40 par 40 nombres avec une resolution de 0,2. 
+
     p Voilà, je vous laisse admirer votre travail... Ou le debug, si cela ne fonctionne pas.
     p Si vous voulez changer de fonctions, pour en admirer d'autres, il faut juste changer la fonction du début qu'on avait employer.
     
